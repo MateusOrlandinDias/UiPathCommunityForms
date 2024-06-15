@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>527,813</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,812</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AtualizarProjetoTrigger_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,7 +90,7 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AtualizarProjetoTrigger" sap:VirtualizedContainerService.HintSize="416,614" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AtualizarProjetoTrigger" sap:VirtualizedContainerService.HintSize="416,615" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUpdatedDevEmail" />
       <Variable x:TypeArguments="x:String" Name="strUpdatedProjectManager" />
@@ -101,7 +101,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.atualizarProjeto" FormId="a2f4c500-1338-4efa-a6f6-cbc99c481b69" sap:VirtualizedContainerService.HintSize="354,191" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="cb567b67-9c16-4552-b226-b0120b9a73d4" />
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form Event Trigger" Enabled="True" Event="click.atualizarProjeto" FormId="a2f4c500-1338-4efa-a6f6-cbc99c481b69" sap:VirtualizedContainerService.HintSize="354,192" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="cb567b67-9c16-4552-b226-b0120b9a73d4" />
     <ufa:GetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Get Form Values" FormId="a2f4c500-1338-4efa-a6f6-cbc99c481b69" sap:VirtualizedContainerService.HintSize="354,172" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="developerEmail">[strUpdatedDevEmail]</OutArgument>
