@@ -1,0 +1,52 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Project Form Call.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strEmailDev&Sequence_1",
+        "dictProjectForms&Sequence_1",
+        "dtProjectForm&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Project Forms/AtualizarProjetoTrigger.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strVersionReframework&Sequence_1",
+        "uriUrlRepoProject&Sequence_1",
+        "strEmailProjectManager&Sequence_1",
+        "dateEndProject&Sequence_1",
+        "dateStartProject&Sequence_1",
+        "strEmailStackHolder&Sequence_1",
+        "dictProjectForms&Sequence_1",
+        "dtProjectForm&Sequence_1",
+        "strEmailDev&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "TriggerEventArgs"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}
