@@ -12,6 +12,12 @@
       "Path": "Project Form Call.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dateonlyEstimadoFimProjeto&Sequence_1",
+        "dateonlyInicioProjeto&Sequence_1",
+        "strVersaoReframework&Sequence_1",
+        "uriRepoProjeto&Sequence_1",
+        "strEmailStackHolder&Sequence_1",
+        "strEmailGerenteProjeto&Sequence_1",
         "strEmailDev&Sequence_1",
         "dictProjectForms&Sequence_1",
         "dtProjectForm&Sequence_1"
@@ -24,11 +30,11 @@
       "Path": "Project Forms/AtualizarProjetoTrigger.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dateonlyEndProject&Sequence_1",
+        "dateonlyStartProject&Sequence_1",
         "strVersionReframework&Sequence_1",
         "uriUrlRepoProject&Sequence_1",
         "strEmailProjectManager&Sequence_1",
-        "dateEndProject&Sequence_1",
-        "dateStartProject&Sequence_1",
         "strEmailStackHolder&Sequence_1",
         "dictProjectForms&Sequence_1",
         "dtProjectForm&Sequence_1",

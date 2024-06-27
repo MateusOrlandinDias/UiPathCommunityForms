@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Project_Form_Call" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1523,1548" sap2010:WorkflowViewState.IdRef="Project_Form_Call_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Project_Form_Call" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1227,1520" sap2010:WorkflowViewState.IdRef="Project_Form_Call_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ufa="clr-namespace:UiPath.Forms.Activities;assembly=UiPath.Forms.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -103,11 +103,17 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Project_Form_Call" sap:VirtualizedContainerService.HintSize="592,1483" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Project_Form_Call" sap:VirtualizedContainerService.HintSize="592,1455" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtProjectForm" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(Of String, String)]" Name="dictProjectForms" />
       <Variable x:TypeArguments="x:String" Name="strEmailDev" />
+      <Variable x:TypeArguments="x:String" Name="strEmailGerenteProjeto" />
+      <Variable x:TypeArguments="x:String" Name="strEmailStackHolder" />
+      <Variable x:TypeArguments="x:Uri" Name="uriRepoProjeto" />
+      <Variable x:TypeArguments="x:String" Name="strVersaoReframework" />
+      <Variable x:TypeArguments="s:DateOnly" Name="dateonlyInicioProjeto" />
+      <Variable x:TypeArguments="s:DateOnly" Name="dateonlyEstimadoFimProjeto" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -140,9 +146,9 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Form Info" sap:VirtualizedContainerService.HintSize="530,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Form Info" sap:VirtualizedContainerService.HintSize="530,334" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strEmailDev]</OutArgument>
@@ -153,48 +159,81 @@ dictProjectForms("emailDesenvolvedor").ToString,
 Nothing)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strEmailGerenteProjeto]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("emailGerenteDeProjeto").ToString)), 
+dictProjectForms("emailGerenteDeProjeto").ToString,
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strEmailStackHolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("emailStackHolder").ToString)), 
+dictProjectForms("emailStackHolder").ToString,
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Uri">[uriRepoProjeto]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Uri" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("urlDoRepositorioDoProjeto").ToString)), 
+New Uri(dictProjectForms("urlDoRepositorioDoProjeto").ToString),
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strVersaoReframework]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("versaoReFrameworkUtilizada").ToString)), 
+dictProjectForms("versaoReFrameworkUtilizada").ToString,
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:DateOnly">[dateonlyInicioProjeto]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:DateOnly" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("dataDeInicioDoProjeto").ToString)), 
+DateOnly.ParseExact(dictProjectForms("dataDeInicioDoProjeto").ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:DateOnly">[dateonlyEstimadoFimProjeto]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:DateOnly" xml:space="preserve">[If(Not(String.IsNullOrWhiteSpace(dictProjectForms("dataEstimadaDeFinalizacaoDoProjeto").ToString)), 
+DateOnly.ParseExact(dictProjectForms("dataEstimadaDeFinalizacaoDoProjeto").ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture),
+Nothing)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form - Project Form" FormId="60637e84-36de-4075-8d61-df4f32dec179" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_2" IsAsync="True">
+    <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form - Project Form" FormId="60637e84-36de-4075-8d61-df4f32dec179" sap:VirtualizedContainerService.HintSize="530,218" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
       <ufa:ShowFormActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="emailDesenvolvedor">[strEmailDev]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="emailGerenteDeProjeto">[strEmailGerenteProjeto]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="emailStackHolder">[strEmailStackHolder]</InArgument>
+        <InArgument x:TypeArguments="x:Uri" x:Key="urlDoRepositorioDoProjeto">[uriRepoProjeto]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="versaoReFrameworkUtilizada">[strVersaoReframework]</InArgument>
+        <InArgument x:TypeArguments="s:DateOnly" x:Key="dataDeInicioDoProjeto">[dateonlyInicioProjeto]</InArgument>
+        <InArgument x:TypeArguments="s:DateOnly" x:Key="dataEstimadaDeFinalizacaoDoProjeto">[dateonlyEstimadoFimProjeto]</InArgument>
       </ufa:ShowFormActivity.Arguments>
     </ufa:ShowFormActivity>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ufa:ShowFormActivity Height="{x:Null}" InstanceName="{x:Null}" Left="{x:Null}" ShowInTaskbar="{x:Null}" ShowMargin="{x:Null}" Title="{x:Null}" Top="{x:Null}" TopMost="{x:Null}" Width="{x:Null}" WindowState="{x:Null}" DisplayName="Show Form - Project Form" FormId="60637e84-36de-4075-8d61-df4f32dec179" sap:VirtualizedContainerService.HintSize="354,209" sap2010:WorkflowViewState.IdRef="ShowFormActivity_1" IsAsync="True">
-            <ufa:ShowFormActivity.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="emailDesenvolvedor">[dictProjectForms("emailDesenvolvedor").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="emailGerenteDeProjeto">[dictProjectForms("emailGerenteDeProjeto").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="emailStackHolder">[dictProjectForms("emailStackHolder").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:Uri" x:Key="urlDoRepositorioDoProjeto">[New Uri(dictProjectForms("urlDoRepositorioDoProjeto").ToString)]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="versaoReFrameworkUtilizada">[dictProjectForms("versaoReFrameworkUtilizada").ToString]</InArgument>
-              <InArgument x:TypeArguments="s:DateOnly" x:Key="dataDeInicioDoProjeto">[DateOnly.ParseExact(dictProjectForms("dataDeInicioDoProjeto").ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture)]</InArgument>
-              <InArgument x:TypeArguments="s:DateOnly" x:Key="dataEstimadaDeFinalizacaoDoProjeto">[DateOnly.ParseExact(dictProjectForms("dataEstimadaDeFinalizacaoDoProjeto").ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture)]</InArgument>
-            </ufa:ShowFormActivity.Arguments>
-          </ufa:ShowFormActivity>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="60637e84-36de-4075-8d61-df4f32dec179" sap:VirtualizedContainerService.HintSize="530,172" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
-      <ufa:SetFormFieldsActivity.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-      </ufa:SetFormFieldsActivity.Arguments>
-    </ufa:SetFormFieldsActivity>
-    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="530,118" sap2010:WorkflowViewState.IdRef="StartTriggers_2" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
+    <ui:StartTriggers ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Run Local Triggers" sap:VirtualizedContainerService.HintSize="530,133" sap2010:WorkflowViewState.IdRef="StartTriggers_2" UnSafe="False" WorkflowFileName=".local\generated\Triggers.Generated.xaml">
       <ui:StartTriggers.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:StartTriggers.Arguments>
