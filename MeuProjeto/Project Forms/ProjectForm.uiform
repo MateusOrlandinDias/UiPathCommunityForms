@@ -284,6 +284,33 @@
             "label": "Columns"
           }
         ]
+      },
+      {
+        "title": "Assets",
+        "theme": "info",
+        "collapsible": false,
+        "key": "projectAssets",
+        "type": "panel",
+        "label": "Panel",
+        "input": false,
+        "tableView": false,
+        "components": [
+          {
+            "label": "Data Map",
+            "tableView": false,
+            "key": "dataMap",
+            "type": "datamap",
+            "input": true,
+            "valueComponent": {
+              "type": "textfield",
+              "key": "value",
+              "label": "Value",
+              "input": true,
+              "hideLabel": true,
+              "tableView": true
+            }
+          }
+        ]
       }
     ]
   }
