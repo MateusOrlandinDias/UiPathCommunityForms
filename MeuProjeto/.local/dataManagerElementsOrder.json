@@ -12,15 +12,17 @@
       "Path": "Project Form Call.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dictAssets&Sequence_1",
+        "dtUnupdatedAssets&Sequence_4",
         "dateonlyEstimadoFimProjeto&Sequence_1",
-        "dateonlyInicioProjeto&Sequence_1",
-        "strVersaoReframework&Sequence_1",
-        "uriRepoProjeto&Sequence_1",
-        "strEmailStackHolder&Sequence_1",
-        "strEmailGerenteProjeto&Sequence_1",
-        "strEmailDev&Sequence_1",
+        "dtProjectForm&Sequence_1",
         "dictProjectForms&Sequence_1",
-        "dtProjectForm&Sequence_1"
+        "strEmailDev&Sequence_1",
+        "strEmailGerenteProjeto&Sequence_1",
+        "strEmailStackHolder&Sequence_1",
+        "uriRepoProjeto&Sequence_1",
+        "strVersaoReframework&Sequence_1",
+        "dateonlyInicioProjeto&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -51,6 +53,24 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "UpdateProjectFormSpreadsheet.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "strEmailDev",
+        "strEmailProjectManager",
+        "strEmailStackHolder",
+        "uriUrlRepoProject",
+        "strVersionReframework",
+        "dateonlyStartProject",
+        "dateonlyEndProject",
+        "dictProjectForms",
+        "dtProjectForm"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
