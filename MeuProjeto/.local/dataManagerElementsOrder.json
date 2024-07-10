@@ -12,6 +12,7 @@
       "Path": "Project Form Call.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strOrcAssetValue&Sequence_5",
         "dictAssets&Sequence_1",
         "dtUnupdatedAssets&Sequence_4",
         "dateonlyEstimadoFimProjeto&Sequence_1",
@@ -31,17 +32,7 @@
     {
       "Path": "Project Forms/AtualizarProjetoTrigger.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dateonlyEndProject&Sequence_1",
-        "dateonlyStartProject&Sequence_1",
-        "strVersionReframework&Sequence_1",
-        "uriUrlRepoProject&Sequence_1",
-        "strEmailProjectManager&Sequence_1",
-        "strEmailStackHolder&Sequence_1",
-        "dictProjectForms&Sequence_1",
-        "dtProjectForm&Sequence_1",
-        "strEmailDev&Sequence_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
         "TriggerEventArgs"
       ],
@@ -59,18 +50,32 @@
     {
       "Path": "UpdateProjectFormSpreadsheet.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [
-        "strEmailDev",
-        "strEmailProjectManager",
-        "strEmailStackHolder",
-        "uriUrlRepoProject",
-        "strVersionReframework",
-        "dateonlyStartProject",
-        "dateonlyEndProject",
-        "dictProjectForms",
-        "dtProjectForm"
+      "VariablesSectionElementsOrder": [
+        "strAssetValue&Sequence_10",
+        "dtAssets&Sequence_9",
+        "dictAssets&Sequence_7",
+        "strEmailDev&Sequence_7",
+        "strEmailProjectManager&Sequence_7",
+        "strEmailStackHolder&Sequence_7",
+        "uriUrlRepoProject&Sequence_7",
+        "dtProjectForm&Sequence_7",
+        "dictProjectForms&Sequence_7",
+        "dateonlyEndProject&Sequence_7",
+        "dateonlyStartProject&Sequence_7",
+        "strVersionReframework&Sequence_7"
       ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Project Forms/UpdateProjectAssets.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strAssetValue&Sequence_4",
+        "dictAssets&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
