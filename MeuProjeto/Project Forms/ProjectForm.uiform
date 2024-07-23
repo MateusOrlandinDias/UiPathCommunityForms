@@ -125,8 +125,8 @@
           {
             "components": [
               {
-                "label": "Email Stack Holder",
-                "placeholder": "stackholder@gmail.com",
+                "label": "Email Stakeholder",
+                "placeholder": "stakeholder@gmail.com",
                 "tableView": true,
                 "key": "emailStackHolder",
                 "type": "email",
